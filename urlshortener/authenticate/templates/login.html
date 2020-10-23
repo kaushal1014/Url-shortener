@@ -13,8 +13,9 @@
     <body>
         <form action="{%url 'login'%}" method="POST">
             {% csrf_token %}
-            <input placeholder="Username" name="username" type="text">
-            <input placeholder="Password" name="password" type="text">
-            <input type="submit">
+            <input placeholder="Username" name="username" type="text"><br>
+            <input placeholder="Password" name="password" type="text"><br>
+            <input type="submit"><br>
+            <a href="{%url 'signup'%}">Not a registered user?</a>
         </form>
     </body>
