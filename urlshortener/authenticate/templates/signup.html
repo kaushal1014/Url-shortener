@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <style>
+            form{
+                text-align: center;
+                margin-top: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="{%url 'signup'%}" method="POST">
+            {% csrf_token %}
+            <input placeholder="Username" name="username" type="text">
+            <input placeholder="Password" name="password" type="text">
+            <input type="submit">
+        </form>
+    </body>
