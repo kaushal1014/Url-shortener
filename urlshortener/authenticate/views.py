@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login , logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.models import User
+from urlhandeler.views import index
 # Create your views here.
 def login_view(request):
     if request.method=='POST':
@@ -30,4 +31,4 @@ def signup(request):
     return render(request, "signup.html")
 
 def urlshortner(request):
-    return HttpResponse("under work")
+    return index(request)
