@@ -11,9 +11,9 @@ def login_view(request):
         user=authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse('urlshortner'))
+            return HttpResponseRedirect(reverse('authenticate:urlshortner'))
         else:
-            return HttpResponseRedirect(reverse('signup'))
+            return HttpResponseRedirect(reverse('authenticate:signup'))
     return render(request, "login.html")
 
 def signup(request):
@@ -25,7 +25,7 @@ def signup(request):
         confirm_email= request.POST['email1']
         user=User.objects.create_user(username=username, password=confirm_password, email=confirm_email)
         user.save()
-        return HttpResponseRedirect(reverse('urlshortner'))
+        return HttpResponseRedirect(reverse('authenticate:urlshortner'))
 
     return render(request, "signup.html")
 

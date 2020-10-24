@@ -10,14 +10,14 @@
         </style>
     </head>
     <body>
-        <form action="{%url 'signup'%}" method="POST">
+        <form action="{%url 'authenticate:signup'%}" method="POST">
             {% csrf_token %}
-            <input placeholder="Username" name="username" type="text"><br>
-            <input placeholder="Password" name="password" type="password"><br>
+            <input placeholder="Username" name="username" type="text" minlength="6" ><br>
+            <input placeholder="Password" name="password" type="password" minlength="8"><br>
             <input placeholder="Confirm password" name="password1" type="password"><br>
             <input placeholder="Email" name="email" type="email"><br>
             <input placeholder="Confirm mail" name="email1" type="email"><br>
             <input type="submit"><br>
-            <a href="{%url 'login'%}">Already registered?</a>
+            <a href="{%url 'authenticate:login'%}">Already registered?</a>
         </form>
     </body>
