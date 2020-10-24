@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'urlhandeler',
+    'urlhandel',
     'authenticate',
     'django.contrib.admin',
     'django.contrib.auth',
