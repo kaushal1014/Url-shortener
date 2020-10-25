@@ -33,9 +33,10 @@
 	<p>Welcome to <b>URL Shortner</b></p>
 	</div>
 	<form action="{%url 'authenticate:login'%}" method="POST">
+			{%csrf_token%}
             <input placeholder="Username" name="username" type="text"><br><br>
-            <input placeholder="Password" name="password" type="text"><br><br>
+            <input placeholder="Password" name="password" type="password"><br><br>
             <input type="submit"><br><br>
-            <a href="{%url 'signup'%}">Register here</a>
+            <a href="{%url 'authenticate:signup'%}">Register here</a>
         </form>
     </body>
