@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
+        
         <style>
-            form{
+            body{background-color:#CB4541;
+}
+		form{
                 text-align: center;
                 margin-top: 300px;
             }
+	.heading{
+		text-align: center; 
+		font-family: monospace; 
+		font-size: 50px; 
+		color: #000000; 
+		border-color:blue; 
+		border-style:dashed;
+		left:200px;
+		right:200px;
+		top:100px;
+		position:fixed;
+		color: white;
+  		text-shadow: 2px 2px 5px blue;
+		box-shadow: 10px 10px 5px grey;
+	}
+		
+	.heading:hover{color:red}
         </style>
     </head>
     <body>
-        <form action="{%url 'authenticate:signup'%}" method="POST">
-            {% csrf_token %}
-            <input placeholder="Username" name="username" type="text" minlength="6" ><br>
-            <input placeholder="Password" name="password" type="password" minlength="8"><br>
-            <input placeholder="Confirm password" name="password1" type="password"><br>
-            <input placeholder="Email" name="email" type="email"><br>
-            <input placeholder="Confirm mail" name="email1" type="email"><br>
-            <input type="submit"><br>
-            <a href="{%url 'authenticate:login'%}">Already registered?</a>
+	<div class="heading">
+	<p>Welcome to <b>URL Shortner</b></p>
+	</div>
+	<form action="{%url 'authenticate:login'%}" method="POST">
+            <input placeholder="Username" name="username" type="text" style=height:25px; width:100px;><br><br>
+            <input placeholder="Password" name="password" type="text" style=height:25px; width:100px;><br><br>
+			<input type="submit"><br><br>
+		
+            <a href="{%url 'signup'%}">Register here</a>
         </form>
     </body>
