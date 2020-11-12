@@ -29,6 +29,6 @@ def signup(request):
         return HttpResponseRedirect(reverse('authenticate:urlshortner'))
 
     return render(request, "signup.html")
-
+#hi
 def urlshortner(request):
     return make(request)
